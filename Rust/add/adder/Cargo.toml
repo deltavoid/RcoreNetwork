@@ -1,0 +1,9 @@
+[package]
+name = "adder"
+version = "0.1.0"
+authors = ["zqy <850074816@qq.com>"]
+edition = "2018"
+
+[dependencies]
+
+add-one = { path = "../add-one" }
