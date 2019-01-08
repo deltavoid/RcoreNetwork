@@ -22,3 +22,4 @@ https://os.phil-opp.com/first-edition/
 https://github.com/chenqiuhao1997/RustOS/blob/master/.travis.yml
 
 
+https://doc.rust-lang.org/1.0.0-alpha/book/
