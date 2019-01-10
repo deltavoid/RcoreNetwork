@@ -1,0 +1,5 @@
+
+
+rustup override set nightly-2019-01-01
+
+cargo xbuild --target x86_64-blog_os.json
