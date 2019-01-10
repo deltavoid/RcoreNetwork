@@ -1,25 +1,49 @@
 
 
-https://github.com/Hoblovski/RustOS
+The rust language
+
+    https://kaisery.github.io/trpl-zh-cn/
+
+    https://rustcc.gitbooks.io/rustprimer/content/
+
+    https://doc.rust-lang.org/stable/rust-by-example/
+    
+    https://doc.rust-lang.org/1.0.0-alpha/book/
 
 
-https://github.com/wangrunji0408/RustOS
-
-https://rucore.gitbook.io/rust-os-docs/
-
-https://kaisery.github.io/trpl-zh-cn/
 
 
-https://rustcc.gitbooks.io/rustprimer/content/
 
-https://rustcc.gitbooks.io/rustprimer/content/
+Writing OS with Rust
 
-https://doc.rust-lang.org/stable/rust-by-example/
-
-
-https://os.phil-opp.com/first-edition/
-
-https://github.com/chenqiuhao1997/RustOS/blob/master/.travis.yml
+    https://os.phil-opp.com/first-edition/  
+    https://github.com/phil-opp/blog_os
 
 
-https://doc.rust-lang.org/1.0.0-alpha/book/
+
+Rcore
+    https://github.com/Hoblovski/RustOS
+
+
+    https://github.com/wangrunji0408/RustOS
+
+    https://rucore.gitbook.io/rust-os-docs/
+
+    https://github.com/oscourse-tsinghua/RustOS
+
+
+    https://github.com/chenqiuhao1997/RustOS/blob/master/.travis.yml
+
+
+
+    https://github.com/ring00/RustOS/blob/lab8-rv32/docs/lab4.md
+
+    https://github.com/oscourse-tsinghua/RustOS/tree/labdocs/docs
+
+    https://github.com/oscourse-tsinghua/RustOS/blob/4996010b87b5fed5286a30165067b6ac9878d7c1/docs/lab2.md
+    https://github.com/oscourse-tsinghua/RustOS/blob/4996010b87b5fed5286a30165067b6ac9878d7c1/docs/lab3.md
+
+
+网络
+
+    https://blog.csdn.net/sdulibh/article/details/41826221
