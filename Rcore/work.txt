@@ -1,0 +1,21 @@
+
+
+
+Rcore  boot work content
+
+
+Rcore  source
+
+Rocre  doc
+
+Writing Os in Rust
+
+toolchain
+
+    bootimage
+
+    qemu
+
+
+consentrate to work with boot
+

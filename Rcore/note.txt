@@ -1,0 +1,17 @@
+
+
+Rcore
+
+
+
+project architect
+
+    root
+     |
+     |--cargo.lock
+         |
+         |--cargo.toml
+
+bootloader
+https://github.com/rust-osdev/bootloader
+

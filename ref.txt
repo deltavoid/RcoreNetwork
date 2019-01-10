@@ -19,6 +19,9 @@ Writing OS with Rust
     https://os.phil-opp.com/first-edition/  
     https://github.com/phil-opp/blog_os
 
+    https://os.phil-opp.com/
+    https://os.phil-opp.com/freestanding-rust-binary/
+
 
 
 Rcore
@@ -42,6 +45,10 @@ Rcore
 
     https://github.com/oscourse-tsinghua/RustOS/blob/4996010b87b5fed5286a30165067b6ac9878d7c1/docs/lab2.md
     https://github.com/oscourse-tsinghua/RustOS/blob/4996010b87b5fed5286a30165067b6ac9878d7c1/docs/lab3.md
+
+
+    https://github.com/rust-osdev/bootloader
+    https://github.com/rust-osdev/bootimage
 
 
 网络
