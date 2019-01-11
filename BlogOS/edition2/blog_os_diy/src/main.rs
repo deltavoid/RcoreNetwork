@@ -12,6 +12,7 @@ use blog_os_diy::println;
 pub extern "C" fn _start() -> ! {
     println!("Hello World{}", "!");
 
+    blog_os_diy::gdt::init();
     blog_os_diy::interrupts::init_idt();
 
     // trigger a page fault

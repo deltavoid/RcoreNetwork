@@ -13,8 +13,8 @@ target :
 	bootimage build --target x86_64-blog_os.json
 
 
-.PHONY : test test-basic-boot test-exception-breakpoint test-exception-simple-breakpoint
-test : test-exception-breakpoint
+.PHONY : test test-basic-boot test-exception-breakpoint test-exception-simple-breakpoint test-exception-double-fault-stack-overflow
+test : test-exception-double-fault-stack-overflow
 
 
 test-basic-boot :
@@ -32,6 +32,14 @@ test-exception-breakpoint :
     -serial mon:stdio \
     -device isa-debug-exit,iobase=0xf4,iosize=0x04 \
     -display none
+
+test-exception-double-fault-stack-overflow :
+	bootimage build --bin $@ --target x86_64-blog_os.json
+	qemu-system-x86_64 \
+    -drive format=raw,file=target/x86_64-blog_os/debug/bootimage-$@.bin \
+    -serial mon:stdio \
+    -device isa-debug-exit,iobase=0xf4,iosize=0x04 \
+#    -display none
 
 test-exception-simple-breakpoint :
 	bootimage build --bin $@ --target x86_64-blog_os.json
