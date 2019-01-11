@@ -5,3 +5,4 @@ authors = ["zqy <850074816@qq.com>"]
 edition = "2018"
 
 [dependencies]
+bootloader = "0.3.12"
