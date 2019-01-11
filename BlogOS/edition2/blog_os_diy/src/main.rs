@@ -12,6 +12,12 @@ use blog_os_diy::println;
 pub extern "C" fn _start() -> ! {
     println!("Hello World{}", "!");
 
+    blog_os_diy::interrupts::init_idt();
+
+    // invoke a breakpoint exception
+    x86_64::instructions::int3();
+
+    println!("It did not crash!");
     loop {}
 }
 
