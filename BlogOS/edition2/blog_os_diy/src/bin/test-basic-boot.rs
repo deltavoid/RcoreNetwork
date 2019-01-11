@@ -3,22 +3,28 @@
 #![cfg_attr(test, allow(dead_code, unused_macros, unused_imports))]
 
 use core::panic::PanicInfo;
-use blog_os_diy::println;
+use blog_os_diy::{exit_qemu, serial_println};
 
 /// This function is the entry point, since the linker looks for a function
 /// named `_start` by default.
 #[cfg(not(test))]
 #[no_mangle] // don't mangle the name of this function
 pub extern "C" fn _start() -> ! {
-    println!("Hello World{}", "!");
+    serial_println!("ok");
 
+    unsafe { exit_qemu(); }
     loop {}
 }
+
 
 /// This function is called on panic.
 #[cfg(not(test))]
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
-    println!("{}", info);
+    serial_println!("failed");
+
+    serial_println!("{}", info);
+
+    unsafe { exit_qemu(); }
     loop {}
 }

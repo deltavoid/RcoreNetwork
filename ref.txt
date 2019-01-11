@@ -54,3 +54,12 @@ Rcore
 网络
 
     https://blog.csdn.net/sdulibh/article/details/41826221
+
+
+CI/CD  Continuous intergration
+
+    https://blog.csdn.net/zyqduron/article/details/80505467
+    市面上已有很多开源持续集成工具，例如我们熟悉的Jenkins，还有TeamCity、Travis CI、GO CD、Bamboo、Gitlab CI、CircleCI……等等等等。
+
+    https://www.cnblogs.com/wintersun/p/6285815.html
+
