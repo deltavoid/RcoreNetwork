@@ -7,7 +7,9 @@ run : target
 #	qemu-system-x86_64 -drive format=raw,file=$(image)
 	qemu-system-x86_64 \
     -drive format=raw,file=$(image) \
-    -serial mon:stdio
+    -serial mon:stdio \
+    -device isa-debug-exit,iobase=0xf4,iosize=0x04 \
+    -display none
 
 target :
 	bootimage build --target x86_64-blog_os.json
