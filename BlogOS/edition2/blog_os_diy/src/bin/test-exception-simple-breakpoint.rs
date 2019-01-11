@@ -14,10 +14,8 @@ pub extern "C" fn _start() -> ! {
 
     blog_os_diy::interrupts::init_idt();
 
-    // trigger a page fault
-    unsafe {
-        *(0xdeadbeef as *mut u64) = 42;
-    };
+    // invoke a breakpoint exception
+    x86_64::instructions::int3();
 
     println!("It did not crash!");
     loop {}
