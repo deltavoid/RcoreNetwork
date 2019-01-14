@@ -4,6 +4,7 @@
 
 use core::panic::PanicInfo;
 use blog_os_diy::println;
+use blog_os_diy::print;
 
 /// This function is the entry point, since the linker looks for a function
 /// named `_start` by default.
@@ -14,14 +15,16 @@ pub extern "C" fn _start() -> ! {
 
     blog_os_diy::gdt::init();
     blog_os_diy::interrupts::init_idt();
+    unsafe { blog_os_diy::interrupts::PICS.lock().initialize() };
+    x86_64::instructions::interrupts::enable();
 
     // trigger a page fault
-    unsafe {
-        *(0xdeadbeef as *mut u64) = 42;
-    };
+    // unsafe {
+    //     *(0xdeadbeef as *mut u64) = 42;
+    // };
 
     println!("It did not crash!");
-    loop {}
+    blog_os_diy::hlt_loop(); 
 }
 
 /// This function is called on panic.
@@ -29,5 +32,5 @@ pub extern "C" fn _start() -> ! {
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
     println!("{}", info);
-    loop {}
+    blog_os_diy::hlt_loop();
 }
