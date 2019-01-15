@@ -1,0 +1,9 @@
+
+
+cargo install cargo-xbuild
+
+cargo install bootimage --version "^0.5.0"
+
+rustup component add rust-src
+
+sudo apt install qemu-system
