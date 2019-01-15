@@ -11,4 +11,20 @@ some problems
 
 
 
+x86 Instruction Set Architecture
 
+    Basic Computing Instruction
+
+        Instruction
+
+        Register and memory access
+
+    Interrupt handler
+
+
+    Memory management
+
+
+    device management
+
+    

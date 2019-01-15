@@ -25,21 +25,22 @@ Writing OS with Rust
 
 
 Rcore
-    https://github.com/Hoblovski/RustOS
 
-
-    https://github.com/wangrunji0408/RustOS
+    https://github.com/oscourse-tsinghua/RustOS
 
     https://rucore.gitbook.io/rust-os-docs/
 
-    https://github.com/oscourse-tsinghua/RustOS
+    https://github.com/Hoblovski/RustOS
+
+    https://github.com/wangrunji0408/RustOS
 
 
     https://github.com/chenqiuhao1997/RustOS/blob/master/.travis.yml
 
 
-
     https://github.com/ring00/RustOS/blob/lab8-rv32/docs/lab4.md
+
+
 
     https://github.com/oscourse-tsinghua/RustOS/tree/labdocs/docs
 
@@ -49,6 +50,9 @@ Rcore
 
     https://github.com/rust-osdev/bootloader
     https://github.com/rust-osdev/bootimage
+
+
+    https://github.com/chyyuu/rcore_plus
 
 
 网络
@@ -63,3 +67,8 @@ CI/CD  Continuous intergration
 
     https://www.cnblogs.com/wintersun/p/6285815.html
 
+
+
+xv6
+
+    https://th0ar.gitbooks.io/xv6-chinese/content/

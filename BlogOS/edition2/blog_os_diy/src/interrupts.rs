@@ -1,11 +1,15 @@
-
+use lazy_static::lazy_static;
 use x86_64::structures::idt::{InterruptDescriptorTable, ExceptionStackFrame};
+use pic8259_simple::ChainedPics;
+use spin;
+
+
 use crate::println;
 use crate::print;
-
-use lazy_static::lazy_static;
-
 use crate::gdt;
+use crate::hlt_loop;
+
+
 
 lazy_static! {
     static ref IDT: InterruptDescriptorTable = {
@@ -14,8 +18,6 @@ lazy_static! {
         unsafe {
             idt.double_fault.set_handler_fn(double_fault_handler)
                 .set_stack_index(gdt::DOUBLE_FAULT_IST_INDEX); // new
-            
-            
         }
 
         idt[usize::from(TIMER_INTERRUPT_ID)]
@@ -27,6 +29,9 @@ lazy_static! {
         idt
     };
 }
+
+
+
 pub fn init_idt() {
     IDT.load();
 }
@@ -38,7 +43,7 @@ extern "x86-interrupt" fn breakpoint_handler(
     println!("EXCEPTION: BREAKPOINT\n{:#?}", stack_frame);
 }
 
-use crate::hlt_loop;
+
 
 extern "x86-interrupt" fn double_fault_handler(
     stack_frame: &mut ExceptionStackFrame, _error_code: u64)
@@ -49,8 +54,7 @@ extern "x86-interrupt" fn double_fault_handler(
 
 
 
-use pic8259_simple::ChainedPics;
-use spin;
+
 
 pub const PIC_1_OFFSET: u8 = 32;
 pub const PIC_2_OFFSET: u8 = PIC_1_OFFSET + 8;
@@ -62,8 +66,6 @@ pub static PICS: spin::Mutex<ChainedPics> =
 
 pub const TIMER_INTERRUPT_ID: u8 = PIC_1_OFFSET;
 
-
-
 extern "x86-interrupt" fn timer_interrupt_handler(
     _stack_frame: &mut ExceptionStackFrame)
 {
@@ -73,8 +75,6 @@ extern "x86-interrupt" fn timer_interrupt_handler(
 
 
 pub const KEYBOARD_INTERRUPT_ID: u8 = PIC_1_OFFSET + 1; // new
-
-
 
 extern "x86-interrupt" fn keyboard_interrupt_handler(
     _stack_frame: &mut ExceptionStackFrame)

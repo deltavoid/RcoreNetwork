@@ -11,7 +11,7 @@ use lazy_static::lazy_static;
 #[no_mangle]
 #[allow(unconditional_recursion)]
 pub extern "C" fn _start() -> ! {
-    blog_os_diy::gdt::init();
+    blog_os_diy::gdt::init_gdt();
     init_test_idt();
 
     fn stack_overflow() {
