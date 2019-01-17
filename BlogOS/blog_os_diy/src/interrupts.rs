@@ -17,11 +17,11 @@ lazy_static! {
         idt.breakpoint.set_handler_fn(breakpoint_handler);
         unsafe {
             idt.double_fault.set_handler_fn(double_fault_handler)
-                .set_stack_index(gdt::DOUBLE_FAULT_IST_INDEX); // new
+                .set_stack_index(gdt::DOUBLE_FAULT_IST_INDEX);
         }
 
         idt[usize::from(TIMER_INTERRUPT_ID)]
-            .set_handler_fn(timer_interrupt_handler); // new
+            .set_handler_fn(timer_interrupt_handler);
         
         idt[usize::from(KEYBOARD_INTERRUPT_ID)]
             .set_handler_fn(keyboard_interrupt_handler);

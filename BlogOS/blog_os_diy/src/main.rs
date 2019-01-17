@@ -17,13 +17,12 @@ pub extern "C" fn _start() -> ! {
 
     blog_os_diy::gdt::init_gdt();
     blog_os_diy::interrupts::init_idt();
-    unsafe { blog_os_diy::interrupts::PICS.lock().initialize() };
+    unsafe {
+        blog_os_diy::interrupts::PICS.lock().initialize()
+    };
     x86_64::instructions::interrupts::enable();
 
-    //trigger a page fault
-    // unsafe {
-    //     *(0xdeadbeef as *mut u64) = 42;
-    // };
+    //blog_os_diy::trigger_a_page_fault();
 
     println!("It did not crash!");
     blog_os_diy::hlt_loop(); 

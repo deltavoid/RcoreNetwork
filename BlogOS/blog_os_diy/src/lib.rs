@@ -22,3 +22,10 @@ pub fn hlt_loop() -> ! {
         x86_64::instructions::hlt();
     }
 }
+
+
+pub fn trigger_a_page_fault() {
+    unsafe {
+        *(0xdeadbeef as *mut u64) = 42;
+    };
+}
