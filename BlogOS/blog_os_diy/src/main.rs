@@ -66,6 +66,7 @@ fn kernel_main(boot_info: &'static BootInfo) -> ! {
 
     blog_os_diy::memory::create_example_mapping(&mut recursive_page_table, &mut frame_allocator);
     unsafe { (0xdeadbeaf900 as *mut u64).write_volatile(0xf021f077f065f04e)};
+    // unsafe { (0x1900 as *mut u64).write_volatile(0xf021f077f065f04e)};
 
     println!("It did not crash!");
     blog_os_diy::hlt_loop();

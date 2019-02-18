@@ -50,7 +50,8 @@ pub fn create_example_mapping(
 ) {
     use x86_64::structures::paging::PageTableFlags as Flags;
 
-    let page: Page = Page::containing_address(VirtAddr::new(0x1000));
+    //let page: Page = Page::containing_address(VirtAddr::new(0x1000));
+    let page: Page = Page::containing_address(VirtAddr::new(0xdeadbeaf900));
     let frame = PhysFrame::containing_address(PhysAddr::new(0xb8000));
     let flags = Flags::PRESENT | Flags::WRITABLE;
 
