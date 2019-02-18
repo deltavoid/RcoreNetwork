@@ -47,21 +47,16 @@ fn kernel_main(boot_info: &'static BootInfo) -> ! {
 
     blog_os_diy::gdt::init_gdt();
     blog_os_diy::interrupts::init_idt();
-    unsafe {
-        blog_os_diy::interrupts::PICS.lock().initialize()
-    };
+    unsafe { blog_os_diy::interrupts::PICS.lock().initialize() };
     x86_64::instructions::interrupts::enable();
 
 
-
-    use blog_os_diy::memory::{self, translate_addr};
-    use blog_os_diy::memory::{create_example_mapping, EmptyFrameAllocator};
+    use blog_os_diy::memory::{self, translate_addr, create_example_mapping};
     use x86_64::structures::paging::{PageTable, RecursivePageTable};
 
     let mut recursive_page_table = unsafe {
         memory::init(boot_info.p4_table_addr as usize)
     };
-    // new
     let mut frame_allocator = memory::init_frame_allocator(&boot_info.memory_map);
 
     blog_os_diy::memory::create_example_mapping(&mut recursive_page_table, &mut frame_allocator);
