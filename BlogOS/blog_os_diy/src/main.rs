@@ -24,16 +24,17 @@ pub extern "C" fn _start() -> ! {
 
     //blog_os_diy::trigger_a_page_fault();
 
-    use blog_os_diy::memory::translate_addr;
+    use blog_os_diy::memory::{self, translate_addr};
+
+    const LEVEL_4_TABLE_ADDR: usize = 0o_177777_777_777_777_777_0000;
+    let recursive_page_table = unsafe { memory::init(LEVEL_4_TABLE_ADDR) };
 
     // the identity-mapped vga buffer page
-    println!("0xb8000 -> {:?}", translate_addr(0xb8000));
+    println!("0xb8000 -> {:?}", translate_addr(0xb8000, &recursive_page_table));
     // some code page
-    println!("0x20010a -> {:?}", translate_addr(0x20010a));
+    println!("0x20010a -> {:?}", translate_addr(0x20010a, &recursive_page_table));
     // some stack page
-    println!("0x57ac001ffe48 -> {:?}", translate_addr(0x57ac001ffe48));
-
-
+    println!("0x57ac001ffe48 -> {:?}", translate_addr(0x57ac001ffe48, &recursive_page_table));
 
 
     println!("It did not crash!");
