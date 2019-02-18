@@ -1,3 +1,27 @@
 
 
 
+project entry
+
+    项目入口（根）
+    kernel/src/lib.rs
+
+    启动入口
+    kernel/src/arch/x86_64/mod.rs
+
+    中断入口
+    kernel/src/arch/x86_64/interrupt/?  
+
+
+
+
+
+2019.1.23
+
+Rcore Process and thread analysis
+
+    线程切换  线程创建
+
+    processor  -> process_manager -> scheduler
+
+    调度框架

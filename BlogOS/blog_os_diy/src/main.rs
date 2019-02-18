@@ -24,6 +24,18 @@ pub extern "C" fn _start() -> ! {
 
     //blog_os_diy::trigger_a_page_fault();
 
+    use blog_os_diy::memory::translate_addr;
+
+    // the identity-mapped vga buffer page
+    println!("0xb8000 -> {:?}", translate_addr(0xb8000));
+    // some code page
+    println!("0x20010a -> {:?}", translate_addr(0x20010a));
+    // some stack page
+    println!("0x57ac001ffe48 -> {:?}", translate_addr(0x57ac001ffe48));
+
+
+
+
     println!("It did not crash!");
     blog_os_diy::hlt_loop(); 
 }

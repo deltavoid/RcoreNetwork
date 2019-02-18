@@ -1,0 +1,71 @@
+
+
+ 这是一个kernel OSv的virtio实现 https://github.com/cloudius-systems/osv/tree/master/drivers  @陈嘉杰   
+
+
+ https://blog.zhangpf.com/2018/08/19/write-userspace-driver-in-rust/
+
+
+ 也许可以把这个10g drv裁成两半，一部分是现成的virtio，一部分是后端的10g drv。提现软工层次上一定的抽象与隔离。不过也许这样写是多余了。考虑一下吧。@张乾宇
+
+
+ @萧萧 配置好了linux on qemu。@王润基 如有问题，可问问，也许能解决
+
+
+ debian for riscv的实验记录：https://github.com/shzhxh/computer_knowledge_notes/blob/master/Software/Distr_Debian.md
+
+
+ https://firecracker-microvm.github.io/
+
+
+ 我在做一个简化文件系统，位于branch lab8-rv32-tinyfs，碰到一个编译错。对‘error[E0106]: missing lifetime specifier’这类错误的解决还不了解。代码/branch提交到github上了，请各位同学有空pull并帮忙看看如何解决一下？ 谢谢！
+
+
+ https://fosdem.org/2019/schedule/event/microkernel_written_in_rust/   @贾越凯 @陈嘉杰 @王润基 @戴臻旸
+
+
+ @王润基 https://gitlab.redox-os.org/redox-os/relibc  直接用这个作为 rcore的libc如何?
+
+
+ @向勇 https://www.sigops.org/awards/hof/
+
+
+ 相关链接我整理到https://github.com/chyyuu/aos_course/blob/master/readinglist.md 中了. 可用于本学期的本科OS课扩展讲解和研究生AOS课.
+
+
+ 好奇 lab1 您看 intel sdm 了么
+ (software developer's manual)
+
+
+ https://github.com/MashPlant/decaf
+
+
+ @陈嘉杰  https://fosdem.org/2019/schedule/event/virtio_update/
+
+
+ https://fosdem.org/2019/schedule/event/riscvsbi/
+
+
+ https://fosdem.org/2019/schedule/event/riscvsbi/
+
+
+ @张乾宇  https://fosdem.org/2019/schedule/event/writing_network_drivers_in_high_level_languages/
+
+
+ blog_os文章对应的code 是  https://github.com/phil-opp/blog_os 中的 branch 01 -- 10
+
+
+ rcore的代码在 https://github.com/oscourse-tsinghua/rcore_plus
+
+
+
+RISCV 知识库
+
+    https://mp.weixin.qq.com/s?__biz=MzU2MDY3NzE1Nw==&mid=100000381&idx=1&sn=45e6b8ab26caa75f1cd1c51242a2a181&chksm=7c052a374b72a321e2360a3a4622bd36434fd5fa80ec4009b1d4dbe53e55c62c21b127b635ca&mpshare=1&scene=1&srcid=0124s1m44KskpZ9lmHTSmmsr&pass_ticket=815XhYhKbKzRzjUm5LakdLllC5F4kHFATwQIfjaSxfemPN57AGolyXUHNJMxAL24#rd
+
+fuchisia简介
+
+    https://fuchsia-china.com/fuchsia-os-intro-slide/?variant=zh-cn&from=groupmessage&isappinstalled=0
+
+
+biscuit os 实现了58个syscall, 可以让nginx, Redis,CMailbench在其上运行.

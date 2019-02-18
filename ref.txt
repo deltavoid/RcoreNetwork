@@ -57,6 +57,12 @@ Rcore
 
 网络
 
+    https://github.com/djc/quinn/releases/tag/0.2.0
+
+    https://github.com/m-labs/smoltcp
+
+    
+
     https://blog.csdn.net/sdulibh/article/details/41826221
 
 
@@ -72,3 +78,10 @@ CI/CD  Continuous intergration
 xv6
 
     https://th0ar.gitbooks.io/xv6-chinese/content/
+
+
+
+driver
+
+     https://blog.zhangpf.com/2018/08/19/write-userspace-driver-in-rust/
+    也许可以把这个10g drv裁成两半，一部分是现成的virtio，一部分是后端的10g drv。提现软工层次上一定的抽象与隔离。不过也许这样写是多余了。考虑一下吧。@张乾宇
