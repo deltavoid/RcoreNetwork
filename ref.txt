@@ -85,3 +85,10 @@ driver
 
      https://blog.zhangpf.com/2018/08/19/write-userspace-driver-in-rust/
     也许可以把这个10g drv裁成两半，一部分是现成的virtio，一部分是后端的10g drv。提现软工层次上一定的抽象与隔离。不过也许这样写是多余了。考虑一下吧。@张乾宇
+
+
+
+Redox
+
+    https://gitlab.redox-os.org/redox-os/coreutils
+    

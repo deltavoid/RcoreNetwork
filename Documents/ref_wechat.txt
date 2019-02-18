@@ -69,3 +69,10 @@ fuchisia简介
 
 
 biscuit os 实现了58个syscall, 可以让nginx, Redis,CMailbench在其上运行.
+
+
+
+https://github.com/uutils/coreutils  在支持biscuit支持的redis/nginx前, coreutils是我们可支持的简单程序. 目前这是rust版本的coreutils
+
+
+先从coreutils中找一个最简单的程序, 让它能在rcore上运行.

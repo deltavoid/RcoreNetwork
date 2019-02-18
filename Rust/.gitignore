@@ -1,6 +1,0 @@
-
-*/target
-*.exe
-*.o
-
-**/*.rs.bk
